@@ -3,7 +3,7 @@ echo "
 ********************************
 *       Losu Program Kits      *
 *         Instaling...         *
-*        Version  0.2.2        *
+*        Version  1.2.1        *
 *           GPL_3.0            *
 *               chen-chaochen  *
 *                    2022/8/1  *
