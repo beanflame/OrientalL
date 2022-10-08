@@ -1,0 +1,20 @@
+#!/usr/local/bin/losu
+<>
+csip 开始
+<开始>
+开始, 
+ push
+"输入一个名字>"
+api =  mov 程序,输出,字符  
+add 程序,输出,字符 lvm io ls_io_cout 
+clear 程序,输出,字符 
+ mov 程序,输入,  
+lvm io ls_io_cin mov 程序,输入 
+ debug 
+ add 程序,输入 api =  push
+"，你好\n"
+api &  mov 程序,输出,字符  
+add 程序,输出,字符 lvm io ls_io_cout 
+clear 程序,输出,字符 
+</开始>
+</>
