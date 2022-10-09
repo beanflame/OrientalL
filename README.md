@@ -97,13 +97,7 @@ master分支下的源码仅作预览用途，各发行版源码见release分支<
 4. 加入讨论群，共同进步
 5. 使用洛书开发项目/学生开发毕设也OK
 
-### 最新的LTS版本
-####  **洛书1.0 LTS** 
-关于 **洛书1.0 LTS** 与滚动发行版的区别
-可以参照 [ **[文档链接]** ](https://gitee.com/chen-chaochen/lpk/blob/doc/%E6%B4%9B%E4%B9%A6%201.0%20LTS%20%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3/LTS%E4%B8%8E%E6%BB%9A%E5%8A%A8%E7%89%88%E6%9C%AC%E7%9A%84%E4%B8%8D%E5%90%8C.md)<br>
-关于 **洛书1.0 LTS** 的介绍，安装。详见发行版 [**[洛书1.0 LTS]**
-](https://gitee.com/chen-chaochen/lpk/releases/tag/1.0) <br>
-关于 **洛书1.0 LTS** 的技术文档，可参照 [ **[文档链接]** ](https://gitee.com/chen-chaochen/lpk/tree/doc/%E6%B4%9B%E4%B9%A6%201.0%20LTS%20%E6%8A%80%E6%9C%AF%E6%96%87%E6%A1%A3) 
+
 #### 第三方贡献
 #####  1. **[河图编译器](https://gitee.com/chen-chaochen/lpk/tree/expand/河图编译器)**
 + 简介 一个采用类型python语法(强制缩进)的洛书衍生版本
