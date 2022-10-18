@@ -10,7 +10,7 @@ https://gitee.com/chen-chaochen/lpk
 //file = losuc_head.cpp
 #define LS_PLAT 2
 //1 == Windows 2 == Linux
-//至此，全部配置已完成，可以编�? 
+//至此，全部配置已完成，可以编译 
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -128,9 +128,9 @@ ls_io str_sign_92()
 }
 ls_io ls_endl()
 {
-    //不同系统CRLF不一�?
-    //linux & windows �? LF即可
-    //MAC os �? CR
+    //不同系统CRLF不一样
+    //linux & windows 用 LF即可
+    //MAC os 用 CR
     char a = char(10);
     ls_io b;
     b = a;
@@ -150,9 +150,9 @@ int ls_asc(char a)
 }
 ls_io ls_cr()
 {
-    //不同系统CRLF不一�?
-    //linux & windows �? LF即可
-    //MAC os �? CR
+    //不同系统CRLF不一样
+    //linux & windows 用 LF即可
+    //MAC os 用 CR
     char a = char(13);
     ls_io b;
     b = a;
@@ -388,9 +388,9 @@ ls_io lsc::get_formate(ls_io exp)
     /*
     //这下面的代码被注释了
     //有了更合理的解决方案
-    //影响是写洛书表达式必须手动留�?
-    //加上后会影响 \n 等转义字�?
-    //影响与C的兼容�?
+    //影响是写洛书表达式必须手动留空
+    //加上后会影响 \n 等转义字符
+    //影响与C的兼容性
     ls_io exp = _exp;
     ls_io keyword[8] = {"+","-","*","&","/","\\","|","="};
     ls_io _keyword[8] = {" + "," - "," * ","  &  "," / "," \\ "," | "," = "};
@@ -666,7 +666,7 @@ ls_io lsc::findclass(ls_io _classname)
         }
         if (fin.eof() == 1)
         {
-            cout<< "####警告###\n在源文件 "<<mainfile<<" 中\n�? "<<linenum<<" 行\n�? \""<<_classname<<"\" 的结构出现异常\n";
+            cout<< "####警告###\n在源文件 "<<mainfile<<" 中\n第 "<<linenum<<" 行\n类 \""<<_classname<<"\" 的结构出现异常\n";
             return _rt;
         }
         _rt = _rt + ls_endl() + tmp;   
@@ -731,7 +731,7 @@ ls_io lsc::findclass_exp(ls_io _classname)
         }
         if (fin.eof() == 1)
         {
-            cout<< "####警告###\n在源文件 "<<mainfile<<" 中\n�? "<<linenum<<" 行\n�? \""<<_classname<<"\" 的结构出现异常\n";
+            cout<< "####警告###\n在源文件 "<<mainfile<<" 中\n第 "<<linenum<<" 行\n类 \""<<_classname<<"\" 的结构出现异常\n";
             return _rt;
         }
         _rt = _rt + ls_endl() + tmp;   
@@ -742,7 +742,7 @@ ls_io lsc::findclass_exp(ls_io _classname)
 void lsc::compile(ls_io _file)
 {
     /*
-    前端的引�?
+    前端的引入
     */
     try
     {
@@ -756,7 +756,7 @@ void lsc::compile(ls_io _file)
         fs_in.open(mainfile,ios::in);
         if (fs_in.is_open() == 0)
         {
-            throw "找不到指定文�?!\n";
+            throw "找不到指定文件!\n";
         }
         //open the compiler tmp file
         ofstream f1,f2,f3;
@@ -805,7 +805,7 @@ void lsc::compile(ls_io _file)
 void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
 {
     /* 
-    编译器核心算�?
+    编译器核心算法
     */
     bool csip=0;
     ls_io tmp,sign,sign_tmp;
@@ -897,7 +897,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                     {
                         break;
                     } 
-                    if (replace_all(sign," ","") == "属�?")
+                    if (replace_all(sign," ","") == "属性")
                     {
                         break;
                     } 
@@ -934,7 +934,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         getline(fs_in,sign);
                         if (replace_all(sign," ","") != "{")
                         {
-                            throw "缺少标识�? \"{\"\n";
+                            throw "缺少标识符 \"{\"\n";
                         }
                         */
                         open_sign_num++;
@@ -955,7 +955,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                             */
                             if (fs_in.eof() == 1)
                             {
-                                throw "缺少标识�? \";\"";
+                                throw "缺少标识符 \";\"";
                             }
                             i = 0;
                             do
@@ -979,7 +979,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         getline(fs_in,sign);
                         if (replace_all(sign," ","") != "{")
                         {
-                            throw "缺少标识�? \"{\"\n";
+                            throw "缺少标识符 \"{\"\n";
                         }
                         */
                         open_sign_num++;
@@ -1001,7 +1001,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                             */
                             if (fs_in.eof() == 1)
                             {
-                                throw "缺少标识�? \";\"";
+                                throw "缺少标识符 \";\"";
                             }
                             fs_out<<sign<<" "<<endl;
                         } while (1);
@@ -1009,7 +1009,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         close_sign_num++;
                         break;
                     }
-                    if (replace_all(sign," ","") == "�?")
+                    if (replace_all(sign," ","") == "类")
                     {
                         sign = "";
                         do
@@ -1023,7 +1023,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         getline(fs_in,sign_tmp);
                         if (replace_all(sign_tmp," ","") != "{")
                         {
-                            throw "缺少标识�? \"{\"\n";
+                            throw "缺少标识符 \"{\"\n";
                         }
                         */
                         linenum++;
@@ -1133,7 +1133,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         getline(fs_in,sign_tmp);
                         if (replace_all(sign_tmp," ","") != "{")
                         {
-                            throw "缺少标识�? \"{\"\n";
+                            throw "缺少标识符 \"{\"\n";
                         }
                         */
                         linenum++;
@@ -1156,7 +1156,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         getline(fs_in,sign_tmp);
                         if (replace_all(sign_tmp," ","") != "{")
                         {
-                            throw "缺少标识�? \"{\"\n";
+                            throw "缺少标识符 \"{\"\n";
                         }
                         */
                         linenum++;
@@ -1189,7 +1189,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         getline(fs_in,sign_tmp);
                         if (replace_all(sign_tmp," ","") != "{")
                         {
-                            throw "缺少标识�? \"{\"\n";
+                            throw "缺少标识符 \"{\"\n";
                         }
                         */
                         if (_pos > tmp.length())
@@ -1319,7 +1319,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         getline(fs_in,sign_tmp);                       
                         if (replace_all(sign_tmp," ","") != "{")
                         {
-                            throw "缺少标识�? \"{\"\n";
+                            throw "缺少标识符 \"{\"\n";
                         }
                         */
                         linenum++;
@@ -1396,7 +1396,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         getline(fs_in,sign_tmp);                       
                         if (replace_all(sign_tmp," ","") != "{")
                         {
-                            throw "缺少标识�? \"{\"\n";
+                            throw "缺少标识符 \"{\"\n";
                         }
                         */
                         linenum++;
@@ -1556,7 +1556,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                     }
                     if (_tmp_fin.eof() == 1)
                     {
-                        cout<< "####警告####\n在源文件: "<<mainfile<<" 中\n�?: "<<linenum<<" 行\n调用 "<<voidname<<" 方法时发现\n";
+                        cout<< "####警告####\n在源文件: "<<mainfile<<" 中\n第: "<<linenum<<" 行\n调用 "<<voidname<<" 方法时发现\n";
                         cout<< "该方法所对应的引入文件格式错误\n";
                     }
                     fs_out<<sign_tmp<<endl;
@@ -1575,19 +1575,19 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
         } while (fs_in.eof() == 0);
         if (open_sign_num > close_sign_num)
         {
-        	//cout<<"语法�?"<<open_sign_num<<","<<close_sign_num; 
+        	//cout<<"语法树"<<open_sign_num<<","<<close_sign_num; 
             //err_tree = "错误的语法树\n缺少"+to_string(open_sign_num-close_sign_num)+"个\";\"";
             throw "错误的语法树,缺少\";\"\n";
         }
         if (open_sign_num < close_sign_num)
         {
-        	//cout<<"语法�?"<<open_sign_num<<","<<close_sign_num; 
+        	//cout<<"语法树"<<open_sign_num<<","<<close_sign_num; 
             throw "错误的语法树,多出\";\"\n";
         }
     }
     catch(const char* errinfo)
     {
-        cout<< "####错误####\n在源文件: "<<mainfile<<" 中\n�?: "<<linenum<<" 行\n";
+        cout<< "####错误####\n在源文件: "<<mainfile<<" 中\n第: "<<linenum<<" 行\n";
         cout<< errinfo;
         remove(outfile.c_str());
         remove(classlib.c_str());
