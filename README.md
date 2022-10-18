@@ -58,19 +58,7 @@ Demo源码下载见expand分支<br>
 ```
 
 
-- 洛书原版的代码是C风格的，长这样
-```
-+方法 开始()
-{
-    程序.输出("你好，洛书！")
-}
-```
-- 有朋友开发了一个python风格的前端，长这样
 
-```
-#方法 开始()
-    程序.输出("你好，洛书！")
-```
 
 ### 安装&更新
 洛书采用类似镜像源的安装方式，通过一行命令，即从源码开始生成最新的版本
@@ -91,30 +79,12 @@ sudo wget  --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/releas
 master分支下的源码仅作预览用途，各发行版源码见release分支<br>
 如果自动化安装出现问题，可以参考 [ **此文档** ](https://gitee.com/chen-chaochen/lpk/blob/doc/%E5%AE%89%E8%A3%85%E6%97%B6%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98.md) 或在讨论群咨询 以尝试解决。
 ### 加入洛书
-1. 加入仓库,参与洛书标准的制定及LPK组件的开发
-2. 在expand分支提交pr，参与洛书拓展库的开发
-3. fork本仓库
-4. 加入讨论群，共同进步
-5. 使用洛书开发项目/学生开发毕设也OK
-
-
 #### 第三方贡献
-#####  1. **[河图编译器](https://gitee.com/chen-chaochen/lpk/tree/expand/河图编译器)**
-+ 简介 一个采用类型python语法(强制缩进)的洛书衍生版本
-+ 示例代码(你好世界.hetu)
-
-```
-#加载 开始
-#导入 洛书/标准流
-#标准流 标准流
-#方法 开始()
-    标准流.输出("你好，河图！\n")
-    /*
-        这是河图的多行注释
-        也是通过缩进来控制
-//这是单行注释
-```
-
++ fork本仓库，通过PR提交贡献
++ 加入讨论Q群 
+> 洛书开发交流群 805995065
+#### 加入组织
+[NEUQ LOSU](https://gitee.com/neuq-losu)
 
 ### Demo(单击标题前往链接)
 #### [海龟库](https://gitee.com/chen-chaochen/lpk/blob/expand/%E6%B5%B7%E9%BE%9F%E5%BA%93/readme.md)
@@ -198,10 +168,6 @@ demo 请见 [[链接]](https://gitee.com/chen-chaochen/lpk/tree/expand/Demo)
 
 入门示例请见 [[链接]](https://gitee.com/chen-chaochen/lpk/tree/master/%E6%B4%9B%E4%B9%A6%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81)
 ![输入图片说明](Demo/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-09-10%20125707.jpg)
-![输入图片说明](%E6%B4%9B%E4%B9%A6%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/%E6%B4%9B%E4%B9%A6%E7%A8%8B%E5%BA%8F/3.png)
-![输入图片说明](%E6%B4%9B%E4%B9%A6%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/%E6%B4%9B%E4%B9%A6%E7%A8%8B%E5%BA%8F/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE%202022-07-25%20102106.png)
-![输入图片说明](%E6%B4%9B%E4%B9%A6%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/%E6%B4%9B%E4%B9%A6%E7%A8%8B%E5%BA%8F/2.png)
-![输入图片说明](%E6%B4%9B%E4%B9%A6%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/%E6%B4%9B%E4%B9%A6%E7%A8%8B%E5%BA%8F/%E5%A4%9A%E7%BA%BF%E7%A8%8B.png)
-![输入图片说明](%E6%B4%9B%E4%B9%A6%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81/%E6%B4%9B%E4%B9%A6%E7%A8%8B%E5%BA%8F/%E6%A0%91%E8%8E%93%E6%B4%BE.png)
+
 
 
