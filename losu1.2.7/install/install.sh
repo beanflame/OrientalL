@@ -5,7 +5,7 @@ echo "
 *         Instaling...         *
 *        Version  1.2          *
 *           L  T  S            *
-*               chen-chaochen  *
+*               chen-chaochen  *   
 *                    2022/8/1  *
 ********************************
 "
