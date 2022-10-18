@@ -1,6 +1,6 @@
 /*
-LPK 1.2.6 RC
-Losu Program-language Kits 1.2.6 RC
+LPK 1.2.7 RC
+Losu Program-language Kits 1.2.7 RC
 Powered by chen-chaochen
 https://gitee.com/chen-chaochen/lpk
 */
@@ -558,10 +558,10 @@ void lsc::ana_math_exp(ls_io _exp,ls_io _valfore)
                 tmp = tmp +  mid(exp_,pos,1);
             } while (pos <= exp_.length());
             tmp = _trmate(tmp);
-            if (tmp == "")
+            /*if (tmp == "")
             {
                 tmp = "\\n";
-            }
+            }*/
             fs_out<<" push"<<endl<<"\""<<tmp<<"\""<<endl;
             fs_out<<"api "<<_tmp<<" ";
         }
@@ -807,7 +807,7 @@ void lsc::compile(ls_io _file)
 }
 void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
 {
-    /*
+    /* 
     编译器核心算法
     */
     bool csip=0;
@@ -970,7 +970,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                                 }
                             } while (1);
                             sign = mid(sign,i,sign.length() - i + 1);
-                            sign = replace_all(sign,"[此方法],",_valfore);
+                            sign=replace_all(sign,"[此方法],",_valfore);
                             fs_out<<sign<<" "<<endl;
                         } while (1);
                         close_sign_num++;
@@ -1310,8 +1310,8 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         logic_exp2 = replace_all(logic_exp2,"(","");
                         logic_exp2 = "= " + logic_exp2;
                         ana_math_exp(logic_exp2,_valfore);
-                        fs_out<<" mov "+ ifname+".logic2 pop ";;
-                        fs_out<<"add "+ ifname+".logic1 push\n"<<ifsign<<"\nadd "+ ifname+".logic2 logic "<<ifname<<endl;
+                        fs_out<<" mov "+ ifname+".logic2 ";
+                        fs_out<<"add "+ ifname+".logic1 "+"mov flase."+ifname+".logic1"+" push\n"<<ifsign<<"\nadd "+ ifname+".logic2 "+"mov flase."+ifname+".logic2 logic "<<ifname<<endl;
                         fs_out<<"<logic."<<ifname<<">"<<endl;
                         //getline(fs_in,sign_tmp);
                         if (_pos > tmp.length())
@@ -1457,16 +1457,21 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                     break;
                 }
                 //if (mid(tmp,_pos,1) == "(")
-                
+                if(mid(tmp,_pos,1)=="\""||mid(tmp,_pos,1)=="(") 
+				{
+					break;
+				}
             } while (_pos <= tmp.length());
             if(csip == 0)
             {
                 //cout<<"point";
+                //cout<<"point3"<<endl;
                 ls_io voidtmp;
                 ls_io voidname;
                 voidname = losu_token_voidname(tmp);
                 ls_io voidexp ;
                 voidexp = losu_token_voidexp(tmp);
+                //cout<<voidexp<<endl;
                 ifstream _tmp_fin;
                 //cout<<voidname<<endl;
                 //_tmp_fin.close();
@@ -1588,8 +1593,8 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
         cout<< "####错误####\n在源文件: "<<mainfile<<" 中\n第: "<<linenum<<" 行\n";
         cout<< errinfo;
         remove(outfile.c_str());
-        //remove(classlib.c_str());
-        //remove(objlib.c_str());
+        remove(classlib.c_str());
+        remove(objlib.c_str());
         remove(outtmp.c_str());
         exit(linenum);
     }
@@ -1606,7 +1611,7 @@ int main(int argc,const char** argv)
     main_argv = argv;
     if (argc == 1)
     {
-        cout<<"洛书编程语言 1.2.6 RC\nLosu Program Kits Losu 1.2.6 RC\n组件:   洛书编译器\n(c) 陈朝臣\n遵循 洛书使用协议,第一版\n";
+        cout<<"洛书编程语言 1.2.7 RC\nLosu Program Kits Losu 1.2.7 RC\n组件:   洛书编译器\n(c) 陈朝臣\n遵循 洛书使用协议,第一版\n遵循Apache-2.0开源协议\n";
     }
     else
     {

@@ -10,7 +10,7 @@
         
             add [此类],原字符串 lvm string ls_string_length mov [此类],长度
         ;
-        +回收 字符串
+        +回收 字符串  
     ;
     +方法 截取(起始位置,长度)
     

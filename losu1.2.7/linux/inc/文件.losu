@@ -11,7 +11,7 @@
         <[此类],模式> = 模式 
         <[此类],文件名> = 文件名 
         +指令
-        
+          
             lvm file losuvm_file_freefile mov [此类],编号
             add [此方法],模式 add [此类],编号 add [此方法],文件名 lvm file losuvm_file_open
         ;

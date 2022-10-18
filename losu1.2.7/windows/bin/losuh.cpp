@@ -1,6 +1,6 @@
 /*
-LPK 1.2.6 RC 
-Losu Program-language Kits 1.2.6 RC
+LPK 1.2.7 RC 
+Losu Program-language Kits 1.2.7 RC
 Powered by chen-chaochen
 https://gitee.com/chen-chaochen/lpk
 */
@@ -28,7 +28,7 @@ int main(int ls_losuh_argc, const char** ls_losuh_argv)
     {
         if (ls_losuh_argc == 1)
         {
-            throw "洛书编程语言 1.2.6 RC\nLosu Program Kits Losu 1.2.6 RC\n组件:   洛书模块生成器\n(c) 陈朝臣\n遵循 洛书使用协议,第一版\n";
+            throw "洛书编程语言 1.2.7 RC\nLosu Program Kits Losu 1.2.7 RC\n组件:   洛书模块生成器\n(c) 陈朝臣\n遵循 洛书使用协议,第一版\n遵循Apache-2.0开源协议\n";
         }
         ls_io ls_losuh_mainfile = ls_losuh_argv[1];
         ls_io ls_losuh_tmp;
