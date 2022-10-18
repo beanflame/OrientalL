@@ -1454,7 +1454,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                     break;
                 }
                 //if (mid(tmp,_pos,1) == "(")
-                if(mid(tmp,_pos,1)=="\""||mid(tmp,_pos,1)==","||mid(tmp,_pos,1)=="(") 
+                if(mid(tmp,_pos,1)=="\""||mid(tmp,_pos,1)=="(") 
 				{
 					break;
 				}
