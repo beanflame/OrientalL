@@ -2,7 +2,7 @@
 echo ¬Â È±‡≥Ã”Ô—‘ 1.2.7 RC 
 echo ********************************
 echo *       Losu Program Kits      *
-echo *         Instaling...         *
+echo *         Instaling...         *    
 echo *        Version  1.2.4        *
 echo *           L  T  S            *
 echo *               chen-chaochen  *
