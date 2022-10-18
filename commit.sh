@@ -1,4 +1,10 @@
 #!/bin/sh
+git add commit.sh
+git commit -m "commit script"
+git add update/install.sh
+git commit -m "Install scirpt on Linux"
+git add update/install.bat
+git commit -m "Install scirpt on windows"
 git add losu1.2.7/install/install.sh
 git commit -m "Install scirpt on Linux"
 git add losu1.2.7/install/install.bat
