@@ -1,5 +1,5 @@
 #!/bin/sh
-git add commit.sh
+git add commit.sh 
 git commit -m "commit script"
 git add update/install.sh
 git commit -m "Install scirpt on Linux"
@@ -143,4 +143,4 @@ git commit -m "Lib sources on windows"
 git add losu1.2.8/windows/lib/losuvm_webui.cpp
 git commit -m "Lib sources on windows"
 
-git push losu 
+git push openlosu 
