@@ -37,6 +37,7 @@ rm ./lpk
 rm ./lpk_compiler
 rm ./losuh
 rm ./*.cpp
+rm ./losudb
 
 #安装标准插件
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.2.8/linux/lib/losuvm_io.cpp
