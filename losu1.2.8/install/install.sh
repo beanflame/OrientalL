@@ -17,12 +17,12 @@ wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.2.8/linux/bin/lpk_compiler.cpp
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.2.8/linux/bin/lpk.cpp
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.2.8/linux/bin/losudb.cpp
-g++ -std=c++11 -o losu losu.cpp -ldl -lpthread
-g++ -std=c++11 -o lpk lpk.cpp -ldl -lpthread
-g++ -std=c++11 -o lpk_compiler lpk_compiler.cpp
-g++ -std=c++11 -o losuc losuc.cpp
-g++ -std=c++11 -o losuh losuh.cpp
-g++ -std=c++11 -o losudb losudb.cpp -ldl -lpthread
+g++ -std=c++11 -Ofast -o losu losu.cpp -ldl -lpthread
+g++ -std=c++11 -Ofast -o lpk lpk.cpp -ldl -lpthread
+g++ -std=c++11 -Ofast -o lpk_compiler lpk_compiler.cpp
+g++ -std=c++11 -Ofast -o losuc losuc.cpp
+g++ -std=c++11 -Ofast -o losuh losuh.cpp
+g++ -std=c++11 -Ofast -o losudb losudb.cpp -ldl -lpthread
 
 cp ./losu /usr/local/bin/
 cp ./losuc /usr/local/bin/
@@ -37,7 +37,6 @@ rm ./lpk
 rm ./lpk_compiler
 rm ./losuh
 rm ./*.cpp
-rm ./losudb
 
 #安装标准插件
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.2.8/linux/lib/losuvm_io.cpp
@@ -51,17 +50,17 @@ wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.2.8/linux/lib/losuvm_httpd.cpp
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.2.8/linux/lib/losuvm_gpio.cpp
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.2.8/linux/lib/losuvm_webui.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_io.lsd losuvm_io.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_file.lsd losuvm_file.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_mark.lsd losuvm_mark.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_math.lsd losuvm_math.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_md5.lsd losuvm_md5.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_rand.lsd losuvm_rand.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_string.lsd losuvm_string.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_time.lsd losuvm_time.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_httpd.lsd losuvm_httpd.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_gpio.lsd losuvm_gpio.cpp
-g++ -std=c++11 -shared -fPIC -o losuvm_webui.lsd losuvm_webui.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_io.lsd losuvm_io.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_file.lsd losuvm_file.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_mark.lsd losuvm_mark.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_math.lsd losuvm_math.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_md5.lsd losuvm_md5.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_rand.lsd losuvm_rand.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_string.lsd losuvm_string.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_time.lsd losuvm_time.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_httpd.lsd losuvm_httpd.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_gpio.lsd losuvm_gpio.cpp
+g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_webui.lsd losuvm_webui.cpp
 mkdir /usr/local/lib/losu/lvm
 cp ./*.lsd /usr/local/lib/losu/lvm/
 rm ./*.lsd
