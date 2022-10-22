@@ -33,6 +33,7 @@ cp ./losudb /usr/local/bin/
 cp ./lpk /usr/local/bin/洛书
 rm ./losu
 rm ./losuc
+rm ./losudb
 rm ./lpk
 rm ./lpk_compiler
 rm ./losuh
