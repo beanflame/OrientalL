@@ -1,6 +1,6 @@
 /*
-LPK 1.2.8 RC
-Losu Program-language Kits 1.2.8 RC
+LPK 1.4.1
+Losu Program-language Kits 1.4.1
 Powered by chen-chaochen
 https://gitee.com/chen-chaochen/lpk 
 */
@@ -613,11 +613,16 @@ void ls_vm::hostfile(string _file,string _sign)
     //start();
     try
     {
+        
         _fin.close();
         _fin.open(_file);
+        
+        //_fin.clear();
+        //_fin.seekg(0);
         do
         {
             getline(_fin,sign);
+            //cout<<sign<<";";
             sign = replace_all(sign,ls_cr(),"");
             if (_fin.eof() == 1)
             {
@@ -637,6 +642,7 @@ void ls_vm::hostfile(string _file,string _sign)
                 throw "洛书运行时错误:  错误的中间码格式\n";
             }
             _fin>> sign;
+            //cout<<sign;
             sign = replace_all(sign,ls_cr(),"");
             if (mid(sign,1,7) == "<webui>")
 			{
@@ -654,7 +660,7 @@ void ls_vm::hostfile(string _file,string _sign)
 					}
                     cout<<sign2<<endl;
 				} while (1);
-				break;
+				continue;
 			}
             if (mid(sign,1,8) == "<thread.")
 			{
@@ -670,14 +676,15 @@ void ls_vm::hostfile(string _file,string _sign)
 						break;
 					}
 				} while (1);
-				
+				continue;
 			}
             if (sign == "exit")
             {
                 conf = 1; 
+                continue;
             }
             if (sign == _sign_end)
-            {
+            { 
                 return;
             }
             if (sign == "goto")
@@ -697,66 +704,81 @@ void ls_vm::hostfile(string _file,string _sign)
                         break;
                     }
                 } while (1);
+                continue;
             }
             if (sign == "add")
             {
                 _fin>> sign;
                 add(sign);
+                continue;
             }
             if (sign == "sleep")
             {
                 ls_sleep(atoi(top().c_str()));
+                continue;
             }
             if (sign == "push")
             {
                 getline(_fin,sign);
                 getline(_fin,sign);
                 push(trmate(sign));
+                continue;
             }
             if (sign == "sys")
             {
                 system(top().c_str());
+                continue;
             }
             if (sign == "pop")
             {
                 pop();
+                continue;
             }
             if (sign == "clear")
             {
                 _fin>>sign;
                 clear(sign);
+                continue;
             }
             if (sign == "mov")
             {
                 _fin>>sign;
                 mov(sign);
+                continue;
             }
             if (sign == "end")
             {
                 _fin.close();
                 exit(0);
+                continue;
             }
             if (sign == "lvm")
             {
                 _fin>>_lvm;
                 _fin>>_lvm_func;
                 push(lvm(_lvm.c_str(),_lvm_func.c_str()));
+                continue;
             }
             if (sign == "lsi")
             {
                 _fin>>_lvm;
                 push(lsi(_lvm.c_str(),_lvm_func.c_str()));
+                continue;
             }
             if (sign == "lei")
             {
                 _fin>>_lvm;
                 _fin>>_lvm_func;
                 push(lei(_lvm.c_str(),_lvm_func.c_str()));
+                continue;
             }
             if (sign == "api")
 			{
 				_fin>> sign;
+                if(sign=="=") continue;
 				push(api(sign));
+                //api(sign);
+                continue;
 			}
             if (sign == "loop")
             {
@@ -806,73 +828,72 @@ void ls_vm::hostfile(string _file,string _sign)
                     } while (1);
                 }
                 conf = 0;
+                continue;
             }
             if (sign == "logic")
             {
                 _fin>>sign;
-                if (1 < 2)
+                if (val(stack[3]) > val(stack[1]) && stack[2] == ">")
                 {
-                    if (val(stack[3]) > val(stack[1]) && stack[2] == ">")
-                    {
-                        hostfile(mainfile,"logic." + sign);
-                        goto logicture;
-                    }
-                    if (val(stack[3]) >= val(stack[1]) && stack[2] == ">=")
-                    {
-                        hostfile(mainfile,"logic." + sign);
-                        goto logicture;
-                    }
-                    if (val(stack[3]) < val(stack[1]) && stack[2] == "<")
-                    {
-                        hostfile(mainfile,"logic." + sign);
-                        goto logicture;
-                    }
-                    if (val(stack[3]) <= val(stack[1]) && stack[2] == "<=")
-                    {
-                        hostfile(mainfile,"logic." + sign);
-                        goto logicture;
-                    }
-                    if (val(stack[3]) == val(stack[1]) && stack[2] == "==")
-                    {
-                        hostfile(mainfile,"logic." + sign);
-                        goto logicture;
-                    }
-                    if (val(stack[3]) != val(stack[1]) && stack[2] == "!==")
-                    {
-                        hostfile(mainfile,"logic." + sign);
-                        goto logicture;
-                    }
-                    if (stack[3] == stack[1] && stack[2] == "=")
-                    {
-                        hostfile(mainfile,"logic." + sign);
-                        goto logicture;
-                    }
-                    if (stack[3] != stack[1] && stack[2] == "!=")
-                    {
-                        hostfile(mainfile,"logic." + sign);
-                        goto logicture;
-                    }
-                    sign2 = "";
-                    do
-                    {
-                        if (_fin.eof() == 1)
-                        {
-                            throw "洛书运行时错误:  错误的中间码格式\n";
-                        }
-                        getline(_fin,sign2);
-                        if (sign2 == "</logic." + sign + ">")
-                        {
-                            break;
-                        }
-                    } while (1);
-                    logicture:;
+                    hostfile(mainfile,"logic." + sign);
+                    goto logicture;
                 }
-                
+                if (val(stack[3]) >= val(stack[1]) && stack[2] == ">=")
+                {
+                    hostfile(mainfile,"logic." + sign);
+                    goto logicture;
+                }
+                if (val(stack[3]) < val(stack[1]) && stack[2] == "<")
+                {
+                    hostfile(mainfile,"logic." + sign);
+                    goto logicture;
+                }
+                if (val(stack[3]) <= val(stack[1]) && stack[2] == "<=")
+                {
+                    hostfile(mainfile,"logic." + sign);
+                    goto logicture;
+                }
+                if (val(stack[3]) == val(stack[1]) && stack[2] == "==")
+                {
+                    hostfile(mainfile,"logic." + sign);
+                    goto logicture;
+                }
+                if (val(stack[3]) != val(stack[1]) && stack[2] == "!==")
+                {
+                    hostfile(mainfile,"logic." + sign);
+                    goto logicture;
+                }
+                if (stack[3] == stack[1] && stack[2] == "=")
+                {
+                    hostfile(mainfile,"logic." + sign);
+                    goto logicture;
+                }
+                if (stack[3] != stack[1] && stack[2] == "!=")
+                {
+                    hostfile(mainfile,"logic." + sign);
+                    goto logicture;
+                }
+                sign2 = "";
+                do
+                {
+                    if (_fin.eof() == 1)
+                    {
+                        throw "洛书运行时错误:  错误的中间码格式\n";
+                    }
+                    getline(_fin,sign2);
+                    if (sign2 == "</logic." + sign + ">")
+                    {
+                        break;
+                    }
+                } while (1);
+                logicture:;
+                continue;
                 
             }
             if (sign == "thread")
             {
                 create_new_th(top());
+                continue;
             }
             
         } while (conf == 0);
@@ -940,7 +961,7 @@ int main(int argc,const char** argv)
         vim.start();
         if (command() == "")
         {
-            throw "洛书编程语言 1.2.8 RC\nLosu Program Kits Losu 1.2.8 RC\n组件:   洛书解释器\n(c) 陈朝臣\n遵循 洛书使用协议,第一版\n遵循Apache-2.0开源协议\n";
+            throw "洛书编程语言 1.4.1\nLosu Program Kits Losu 1.4.1\n组件:   洛书解释器\n(c) 陈朝臣\n遵循 洛书使用协议,第一版\n遵循Apache-2.0开源协议\n";
         }
         mainfile = command();
         array_start();

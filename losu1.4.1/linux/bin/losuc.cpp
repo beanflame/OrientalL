@@ -185,7 +185,7 @@ ls_io flase_ifsign(ls_io ifsign)
 ls_io losu_token_voidname(ls_io exp)
 {
     int _pos=0;
-    ls_io ret="";
+    ls_io ret="",_ret="";
     do
     {
         if (_pos>exp.length())
@@ -243,8 +243,36 @@ ls_io losu_token_voidname(ls_io exp)
         }
         ret = ret + mid(exp,_pos,1);
     } while(1);
+    _pos=0;
+    do
+    {
+        if (_pos>exp.length())
+        {
+            break;
+        }
+        _pos++;
+        if(mid(ret,_pos,1)=="'")
+        {
+            do
+            {
+                if(_pos>exp.length())
+                {
+                    break;
+                }
+                _pos++;
+                if(mid(ret,_pos,1)=="'")
+                {
+                    break;
+                }
+            } while (1);
+            continue;
+        }
+        _ret += mid(ret,_pos,1); 
+    } while (1);
+    
     //cout<<replace_all(replace_all(ret," ",""),")","")<<endl;
-    return replace_all(replace_all(ret," ",""),")","");
+    //cout<<replace_all(replace_all(_ret," ",""),")","");
+    return replace_all(replace_all(_ret," ",""),")","");
     
 }
 ls_io losu_token_voidexp(ls_io exp)

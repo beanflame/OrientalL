@@ -1,9 +1,11 @@
 /*
-LPK 1.2.8 RC
-Losu Program-language Kits 1.2.8 RC
+LPK 1.4.1
+Losu Program-language Kits 1.4.1
 Powered by chen-chaochen
 https://gitee.com/chen-chaochen/lpk
 */
+
+
 
 
 
@@ -183,7 +185,7 @@ ls_io flase_ifsign(ls_io ifsign)
 ls_io losu_token_voidname(ls_io exp)
 {
     int _pos=0;
-    ls_io ret="";
+    ls_io ret="",_ret="";
     do
     {
         if (_pos>exp.length())
@@ -241,8 +243,36 @@ ls_io losu_token_voidname(ls_io exp)
         }
         ret = ret + mid(exp,_pos,1);
     } while(1);
+    _pos=0;
+    do
+    {
+        if (_pos>exp.length())
+        {
+            break;
+        }
+        _pos++;
+        if(mid(ret,_pos,1)=="'")
+        {
+            do
+            {
+                if(_pos>exp.length())
+                {
+                    break;
+                }
+                _pos++;
+                if(mid(ret,_pos,1)=="'")
+                {
+                    break;
+                }
+            } while (1);
+            continue;
+        }
+        _ret += mid(ret,_pos,1); 
+    } while (1);
+    
     //cout<<replace_all(replace_all(ret," ",""),")","")<<endl;
-    return replace_all(replace_all(ret," ",""),")","");
+    //cout<<replace_all(replace_all(_ret," ",""),")","");
+    return replace_all(replace_all(_ret," ",""),")","");
     
 }
 ls_io losu_token_voidexp(ls_io exp)
@@ -1608,7 +1638,7 @@ int main(int argc,const char** argv)
     main_argv = argv;
     if (argc == 1)
     {
-        cout<<"洛书编程语言 1.2.8 RC\nLosu Program Kits Losu 1.2.8 RC\n组件:   洛书编译器\n(c) 陈朝臣\n遵循 洛书使用协议,第一版\n遵循Apache-2.0开源协议\n";
+        cout<<"洛书编程语言 1.4.1\nLosu Program Kits Losu 1.4.1\n组件:   洛书编译器\n(c) 陈朝臣\n遵循 洛书使用协议,第一版\n遵循Apache-2.0开源协议\n";
     }
     else
     {
