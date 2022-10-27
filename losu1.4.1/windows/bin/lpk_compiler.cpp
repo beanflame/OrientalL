@@ -1624,8 +1624,8 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
         cout<< "####错误####\n在源文件: "<<mainfile<<" 中\n第: "<<linenum<<" 行\n";
         cout<< errinfo;
         remove(outfile.c_str());
-        remove(classlib.c_str());
-        remove(objlib.c_str());
+        //remove(classlib.c_str());
+        //remove(objlib.c_str());
         remove(outtmp.c_str());
         exit(linenum);
     }
