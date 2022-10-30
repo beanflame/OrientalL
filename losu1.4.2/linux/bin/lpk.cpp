@@ -946,7 +946,13 @@ void ls_vm::hostfile(string _file,string _sign)
                 create_new_th(top());
                 continue;
             }
-            
+            /*
+            if (sign == "debug")
+            {
+                losu_debug_point(_sign);
+                continue;
+            }
+            */
         } while (conf == 0);
         
 
