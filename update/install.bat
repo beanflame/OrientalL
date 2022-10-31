@@ -14,6 +14,8 @@ mkdir C:\losu\bin
 mkdir C:\losu\inc
 mkdir C:\losu\inc\洛书
 
+
+
 ::安装可执行文件
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.2/windows/bin/losuc.cpp
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.2/windows/bin/losu.cpp
