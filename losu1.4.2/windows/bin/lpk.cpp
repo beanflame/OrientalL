@@ -1013,6 +1013,64 @@ string getcsip()
 
 
 extern "C"{
+string losu_space(int num)
+{
+    string ret ="";
+    for(int i=0;i<5-to_string(num).length();i++)
+    {
+        ret+=" ";
+    }
+    return ret;
+}
+void losu_inte_inputlines(string tmp)
+{
+    int line=1;
+    string input;
+    ofstream _outf;
+    vector<string> inline_;
+    inline_.push_back("");
+    do
+    {   
+        cout<<line<<losu_space(line)<<">>";
+        getline(cin,input);
+        if (replace_all(input," ","")==">>")
+        {
+            break;
+        }
+        if(input[0]==':')
+        {
+            line = atoi(mid(input,2,input.length()-1).c_str())-1;
+            inline_.erase(inline_.begin()+line+1,inline_.end());
+            cout<<"####已回退至第"<<line+1<<"行>>>>>>>>"<<endl;
+            for(int i=1;i<inline_.size();i++)
+            { 
+                cout<<i<<losu_space(i)<<inline_[i]<<endl;
+            }
+            line++;
+            continue;
+        }
+        if(input[0]=='$')
+        {
+            int _i=atoi(mid(input,2,input.length()-1).c_str());
+            cout<<"####正在修改第"<<atoi(mid(input,2,input.length()-1).c_str())<<"行>>>>>>>>";
+            getline(cin,input);
+            inline_[_i]=input;
+            cout<<">>>>>>>>>>>>"<<endl; 
+            for(int i=1;i<inline_.size();i++)
+            { 
+                cout<<i<<losu_space(i)<<inline_[i]<<endl;
+            }
+            continue;
+        }
+        line++;
+        inline_.push_back(input);
+        //_outf<<input<<endl;
+    } while (1);
+    _outf.open((tmp+".lsh.lpk").c_str(),ios::out);
+    for(int i =0;i<inline_.size();i++) _outf<<inline_[i]<<endl;
+    _outf.close();
+    return;
+}
 
 void read_src_file(string _filehead)
 {
@@ -1067,25 +1125,28 @@ int main(int argc,const char** argv)
         vim.hostfile(mainfile,getcsip());
         vim._fin.close();
         remove(mainfile.c_str());
-        cout<<">";
         do
         {
-            cout<<">";
+            cout<<">>>>";
             getline(cin,input);
-            if (input == "结束")
+            if(input.length()>=1)
+                if(input[0]==':') system(mid(input,2,input.length()-1).c_str());
+            else if (input == "结束")
             {
                 break;
             }
-            if (input == "调试")
+            else if (input == "调试")
             {
                 vim.losu_debug_point("交互进程");
             }
             else if (input=="<<")
             {
+                /*
                 input_tmp = "";
                 _outf.open((tmp+".lsh.lpk").c_str(),ios::out);
                 do
                 {
+                    cout<<">>";
                     getline(cin,input);
                     if (replace_all(input," ","")==">>")
                     {
@@ -1094,6 +1155,10 @@ int main(int argc,const char** argv)
                     _outf<<input<<endl;
                 } while (1);
                 _outf.close();
+                */
+               
+                losu_inte_inputlines(tmp);
+
                 system(("lpk_compiler "+tmp).c_str());
                 vim.hostfile(mainfile,getcsip());
                 vim._fin.close();
@@ -1107,6 +1172,7 @@ int main(int argc,const char** argv)
                 vim._fin.close();
                 remove(mainfile.c_str());
             }
+            
             
             
         } while (1);
