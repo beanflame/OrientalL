@@ -1044,7 +1044,7 @@ void losu_inte_inputlines(string tmp)
             cout<<"####已回退至第"<<line+1<<"行>>>>>>>>"<<endl;
             for(int i=1;i<inline_.size();i++)
             { 
-                cout<<i<<losu_space(i)<<inline_[i]<<endl;
+                cout<<i<<losu_space(i)<<">>"<<inline_[i]<<endl;
             }
             line++;
             continue;
@@ -1058,7 +1058,7 @@ void losu_inte_inputlines(string tmp)
             cout<<">>>>>>>>>>>>"<<endl; 
             for(int i=1;i<inline_.size();i++)
             { 
-                cout<<i<<losu_space(i)<<inline_[i]<<endl;
+                cout<<i<<losu_space(i)<<">>"<<inline_[i]<<endl;
             }
             continue;
         }
