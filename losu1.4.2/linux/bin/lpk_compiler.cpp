@@ -972,7 +972,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         }
                         */
                         open_sign_num++;
-                        linenum++;
+                        //linenum++;
                         do
                         {
                             getline(fs_in,sign);
@@ -1017,7 +1017,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         }
                         */
                         open_sign_num++;
-                        linenum++;
+                        //linenum++;
                         fs_out<<"<webui>"<<endl;
                         do
                         {
@@ -1060,7 +1060,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                             throw "缺少标识符 \"{\"\n";
                         }
                         */
-                        linenum++;
+                        //linenum++;
                         open_sign_num++;
                         fs_out<<"<"<<_valfore<<sign<<">"<<endl;
                         makefile(sign,"[此类],","");
@@ -1132,7 +1132,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                             throw "缺少标识符\n";
                         }
                         */
-                        linenum++;
+                        //linenum++;
                         open_sign_num++;
                         makefile(_voidname,_voidname + ",","");
                         break;
@@ -1170,7 +1170,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                             throw "缺少标识符 \"{\"\n";
                         }
                         */
-                        linenum++;
+                        //linenum++;
                         open_sign_num++;
                         fs_out<<"<"<<_valfore<<son_class<<">"<<endl;
                         makefile(son_class,"[此类],",findclass_exp(sign));
@@ -1193,7 +1193,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                             throw "缺少标识符 \"{\"\n";
                         }
                         */
-                        linenum++;
+                        //linenum++;
                         open_sign_num++;
                         fs_out<<"push\n"<<sign<<"\nthread"<<endl;
                         fs_out<<"<thread."<<sign<<">"<<endl;
@@ -1230,7 +1230,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         {
                             throw "缺少标识符\n";
                         }
-                        linenum++;
+                        //linenum++;
                         fs_out<<"loop "<<loopname<<endl;
                         fs_out<<endl<<"<loop."<<loopname<<">"<<endl;
                         makefile("loop." + loopname,_valfore,"");
@@ -1356,7 +1356,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                             throw "缺少标识符 \"{\"\n";
                         }
                         */
-                        linenum++;
+                        //linenum++;
                         open_sign_num++;
                         makefile("logic." + ifname,_valfore,"");
                         fs_out<<endl<<"clear " +ifname+".logic1 clear "+ ifname +".logic2"<<endl;
@@ -1433,7 +1433,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                             throw "缺少标识符 \"{\"\n";
                         }
                         */
-                        linenum++;
+                        //linenum++;
                         open_sign_num++;
                         makefile("logic." + ifname,_valfore,"");
                         fs_out<<endl<<"clear " +ifname+".logic1 clear "+ ifname +".logic2"<<endl;
