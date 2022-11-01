@@ -14,15 +14,34 @@
 
 针对现阶段国人编程需求与编程门槛的矛盾，致力于提供一种人人参与，快速构建的编程方式。
 
+```
+//LOSU1.4版本代码
+//方法声明
+#类 系统
+    #方法 复制(源,目标)
+//方法调用
+系统,复制("1.txt","2.txt")
+系统,复制'文件'("1.txt")'为'("2.txt")
+系统,'将文件'("1.txt")复制'为'("2.txt")
+//以上三者都是调用方法 系统,复制
+//洛书"中文"编程,拥有近似自然中文的编程能力,代码风格与散文类似
+//编程时仅需记住关键词，然后可以填写个性化的连接词来完善可读性，不同的人可以写出不同的代码，有效平衡编程效率、记忆难度、灵活度与程序可读性。
+```
+
+
 得益于完全由C++11编写的核心代码，洛书可以在多种平台上直接运行，且可以方便的移植到众多的支持POSIX/GNU标准的平台上，覆盖了从开发板到卡片机到个人计算机等多种设备，具有极大的应用弹性。
 
 洛书支持的 [ **CPU** ](https://gitee.com/chen-chaochen/lpk/blob/doc/platform/CPU_support.md) [ **OS** ](https://gitee.com/chen-chaochen/lpk/blob/doc/platform/OS_support.md) [ **开发板** ](https://gitee.com/chen-chaochen/lpk/blob/doc/platform/board_support.md) 概览
+#### 联系我们
++ 最新发行版链接  [OSC链接](https://www.oschina.net/news/215920) [仓库链接](https://gitee.com/chen-chaochen/lpk/releases/tag/1.4.2)
 
-洛书开发 QQ交流群 805995065 讨论，咨询，技术分享欢迎加群<br>
-抖音 demo 分享帐号 洛书编程小哥<br>
-Demo源码下载见expand分支<br>
-初始设计文档见wiki<br>
-滚动技术文档见doc分支[[链接]](https://gitee.com/chen-chaochen/lpk/tree/doc/)<br>
++ 洛书开发  **QQ交流群 805995065**  讨论，咨询，技术分享欢迎加群<br>
++ 抖音 demo 分享帐号  **洛书编程小哥** <br>
++ Demo源码下载见expand分支<br>
++ 设计文档见wiki<br>
++ 滚动技术文档见doc分支[[链接]](https://gitee.com/chen-chaochen/lpk/tree/doc/)<br>
+
+
 
 #### 特点
 + 开源开放
