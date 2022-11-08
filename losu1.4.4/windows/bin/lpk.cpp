@@ -1,6 +1,6 @@
 /*
-LPK 1.4.2
-Losu Program-language Kits 1.4.2
+LPK 1.4.4
+Losu Program-language Kits 1.4.4
 Powered by chen-chaochen
 https://gitee.com/chen-chaochen/lpk 
 */
@@ -1106,7 +1106,7 @@ int main(int argc,const char** argv)
         vim.start(); 
         tmp = command();
         mainfile = command()+".lsh.lsc.lpk";
-        cout<< "洛书编程语言 1.4.2\nLosu Program Kits Losu 1.4.2\n组件:   洛书交互器\n(C) 汤洛信息科技有限公司\n----------------\n";
+        cout<< "洛书编程语言 1.4.4\nLosu Program Kits Losu 1.4.4\n组件:   洛书交互器\n(C) 汤洛信息科技有限公司\n----------------\n";
         if (command() == "")
         {
             mainfile = "lpk.lsh.lsc.lpk";

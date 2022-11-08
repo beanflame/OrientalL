@@ -1,6 +1,6 @@
 /*
-LPK 1.4.2 
-Losu Program-language Kits 1.4.2
+LPK 1.4.4 
+Losu Program-language Kits 1.4.4
 Powered by chen-chaochen
 https://gitee.com/chen-chaochen/lpk
 */
@@ -30,7 +30,7 @@ int main(int ls_losuh_argc, const char** ls_losuh_argv)
     {
         if (ls_losuh_argc == 1)
         {
-            throw "洛书编程语言 1.4.2\nLosu Program Kits Losu 1.4.2\n组件:   洛书模块生成器\n(C) 汤洛信息科技有限公司\n";
+            throw "洛书编程语言 1.4.4\nLosu Program Kits Losu 1.4.4\n组件:   洛书模块生成器\n(C) 汤洛信息科技有限公司\n";
         }
         ls_io ls_losuh_mainfile = ls_losuh_argv[1];
         ls_io ls_losuh_tmp;

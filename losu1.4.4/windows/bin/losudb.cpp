@@ -1,6 +1,6 @@
 /*
-LPK 1.4.2
-Losu Program-language Kits 1.4.2
+LPK 1.4.4
+Losu Program-language Kits 1.4.4
 Powered by chen-chaochen
 https://gitee.com/chen-chaochen/lpk 
 */
@@ -1019,7 +1019,7 @@ int main(int argc,const char** argv)
         vim.start();
         if (command() == "")
         {
-            throw "洛书编程语言 1.4.2\nLosu Program Kits Losu 1.4.2\n组件:   洛书调试器\n(C) 汤洛信息科技有限公司\n";
+            throw "洛书编程语言 1.4.4\nLosu Program Kits Losu 1.4.4\n组件:   洛书调试器\n(C) 汤洛信息科技有限公司\n";
         }
         mainfile = command();
         array_start();
