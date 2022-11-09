@@ -1523,8 +1523,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                         if(bool_tmp)
                         {
                             _tmp_fin.close();
-                            _tmp_fin.open(outfile,ios::in);
-                            break;
+                            _tmp_fin.open(outfile);
                         }
                         else 
                         {
