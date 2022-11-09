@@ -1508,7 +1508,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                 //_tmp_fin.close();
                 _tmp_fin.open(objlib);    
                 //cout<<voidexp<<endl;
-                
+                bool bool_tmp=1;
                 do
                 {
                     getline(_tmp_fin,sign_tmp);
@@ -1516,12 +1516,29 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                     {
                         break;
                     }
-                    if (_tmp_fin.eof() == 1)
+                    /*
+                        if (_tmp_fin.eof() == 1)
+                        {
+                            sign_tmp = "找不到指定方法\n" + voidname + "\n";
+                            throw sign_tmp.c_str();
+                        }
+                    */
+                    if(_tmp_fin.eof()==1)
                     {
-                        sign_tmp = "找不到指定方法\n" + voidname + "\n";
-                        throw sign_tmp.c_str();
+                        if(bool_tmp)
+                        {
+                            _tmp_fin.close();
+                            _tmp_fin.open(outfile);
+                        }
+                        else 
+                        {
+                            sign_tmp = "找不到指定方法\n" + voidname + "\n";
+                            throw sign_tmp.c_str();
+                        }
+                        bool_tmp = 0;
                     }
                 } while (1);
+                
                 
                 sign_tmp = " ";
                 int __pos=0;
