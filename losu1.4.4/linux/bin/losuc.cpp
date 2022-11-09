@@ -1512,7 +1512,8 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                     {
                         break;
                     }
-                    /*if (_tmp_fin.eof() == 1)
+                    /*
+                        if (_tmp_fin.eof() == 1)
                         {
                             sign_tmp = "找不到指定方法\n" + voidname + "\n";
                             throw sign_tmp.c_str();
