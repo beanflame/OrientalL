@@ -1504,7 +1504,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                 //_tmp_fin.close();
                 _tmp_fin.open(objlib);    
                 //cout<<voidexp<<endl;
-                
+                bool bool_tmp=1;
                 do
                 {
                     getline(_tmp_fin,sign_tmp);
@@ -1512,10 +1512,26 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                     {
                         break;
                     }
-                    if (_tmp_fin.eof() == 1)
+                    /*if (_tmp_fin.eof() == 1)
+                        {
+                            sign_tmp = "找不到指定方法\n" + voidname + "\n";
+                            throw sign_tmp.c_str();
+                        }
+                    */
+                    if(_tmp_fin.eof()==1)
                     {
-                        sign_tmp = "找不到指定方法\n" + voidname + "\n";
-                        throw sign_tmp.c_str();
+                        if(bool_tmp)
+                        {
+                            _tmp_fin.close();
+                            _tmp_fin.open(outfile,ios::in);
+                            break;
+                        }
+                        else 
+                        {
+                            sign_tmp = "找不到指定方法\n" + voidname + "\n";
+                            throw sign_tmp.c_str();
+                        }
+                        bool_tmp = !bool_tmp;
                     }
                 } while (1);
                 
@@ -1597,10 +1613,10 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
 
 
             /*
-            if (_pos > tmp.length())
-            {
-                throw "无法识别为有效的信息\n";
-            }
+                if (_pos > tmp.length())
+                {
+                    throw "无法识别为有效的信息\n";
+                    }   
             */
         } while (fs_in.eof() == 0);
         if (open_sign_num > close_sign_num)
