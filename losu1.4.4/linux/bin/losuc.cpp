@@ -1531,7 +1531,7 @@ void lsc::makefile(ls_io _endsign,ls_io _valfore,ls_io _extends)
                             sign_tmp = "找不到指定方法\n" + voidname + "\n";
                             throw sign_tmp.c_str();
                         }
-                        bool_tmp = !bool_tmp;
+                        bool_tmp = 0;
                     }
                 } while (1);
                 
