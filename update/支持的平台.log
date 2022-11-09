@@ -1,0 +1,30 @@
++ x86
+    - Windows
+    - Ubuntu
+    - Cent OS
+    - Debian
+    - Arch
+    - Kali
+    - Open Suse
+    - Openkylin
++ x64
+    - Windows
+    - Ubuntu
+    - Cent OS
+    - Debian
+    - Deepin
+    - Arch
+    - Kali
+    - Open Suse
++ ARM-32
+    - Ubuntu meta
+    - debian
++ ARM-64
+    - raspi
+    - Debian
++ RISC-V
+    - Openkylin
++ loong
+    -loongbian
+
+部分支持平台参考列表
