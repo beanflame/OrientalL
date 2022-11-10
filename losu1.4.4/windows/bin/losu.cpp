@@ -332,7 +332,7 @@ class ls_vm
         int conf = 0;
         string csip;
         const char* _csip;
-        ifstream _fin;
+        //ifstream _fin;
         vector<string> stack;
         int _stack_top;
         void start();
@@ -605,6 +605,7 @@ string ls_vm::lsi(const char* _vm,const char* _func)
 }
 void ls_vm::hostfile(string _file,string _sign)
 {
+    ifstream _fin;
     long _loop;
     string label,sign,sign2,_sign_start,_sign_end;
     string _lvm,_lvm_func;
@@ -614,7 +615,7 @@ void ls_vm::hostfile(string _file,string _sign)
     try
     {
         
-        _fin.close();
+        //_fin.close();
         _fin.open(_file);
         
         //_fin.clear();
@@ -780,7 +781,7 @@ void ls_vm::hostfile(string _file,string _sign)
                 //api(sign);
                 continue;
 			}
-            if (sign == "loop")
+            /*if (sign == "loop")
             {
                 _fin>> sign;
                 _loop = atoi(top().c_str());
@@ -811,6 +812,56 @@ void ls_vm::hostfile(string _file,string _sign)
                             i--;
                         }
                     }while( i > 0 || i < 0);
+                }
+                else
+                {
+                    do
+                    {
+                        if (_fin.eof() == 1)
+                        {
+                            throw "洛书运行时错误:  错误的中间码格式\n";
+                        }
+                        getline(_fin,sign2);
+                        if (sign2 == "</loop." + sign + ">")
+                        {
+                            break;
+                        }
+                    } while (1);
+                }
+                conf = 0;
+                continue;
+            }*/
+            if (sign == "loop")
+            {
+                _fin>> sign;
+                _loop = atoi(top().c_str());
+                if (_loop != 0)
+                {
+                    int i = _loop; 
+                    do
+                    {
+                        hostfile(mainfile,"loop." + sign);
+                        if (conf == 1)
+                        {
+                            break;
+                        }
+                        if (i > 0)
+                        {
+                            i--;
+                        }
+                    }while( i > 0 || i < 0);
+                    do
+                    {
+                        if (_fin.eof() == 1)
+                        {
+                            throw "洛书运行时错误:  错误的中间码格式\n";
+                        }
+                        getline(_fin,sign2);
+                        if (sign2 == "</loop." + sign + ">")
+                        {
+                            break;
+                        }
+                    } while (1);
                 }
                 else
                 {
@@ -896,11 +947,11 @@ void ls_vm::hostfile(string _file,string _sign)
                 continue;
             }
             /*
-            if (sign == "debug")
-            {
-                losu_debug_point(_sign);
-                continue;
-            }
+                if (sign == "debug")
+                {
+                    losu_debug_point(_sign);
+                    continue;
+                }
             */
         } while (conf == 0);
         
@@ -911,7 +962,7 @@ void ls_vm::hostfile(string _file,string _sign)
         cout<< _errinfo;
         exit(-1);
     }
-    
+    _fin.close();
 }
 void create_new_th(string _th_name)
 {
