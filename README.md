@@ -34,7 +34,7 @@
 
 洛书支持的 [ **CPU** ](https://gitee.com/chen-chaochen/lpk/blob/doc/platform/CPU_support.md) [ **OS** ](https://gitee.com/chen-chaochen/lpk/blob/doc/platform/OS_support.md) [ **开发板** ](https://gitee.com/chen-chaochen/lpk/blob/doc/platform/board_support.md) 概览
 #### 联系我们
-+ 最新发行版链接  [OSC链接](https://www.oschina.net/news/215920) [仓库链接](https://gitee.com/chen-chaochen/lpk/releases/tag/1.4.2)
++ 最新发行版链接  OSC链接 [仓库链接](https://gitee.com/chen-chaochen/lpk/releases/tag/1.4.4)
 
 + 洛书开发  **QQ交流群 805995065**  讨论，咨询，技术分享欢迎加群<br>
 + 抖音 demo 分享帐号  **洛书编程小哥** <br>
