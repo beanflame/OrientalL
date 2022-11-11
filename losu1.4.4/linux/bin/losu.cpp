@@ -925,19 +925,20 @@ void ls_vm::hostfile(string _file,string _sign)
                     goto logicture;
                 }
                 sign2 = "";
-                do
-                {
-                    if (_fin.eof() == 1)
+                logicture:
+                    do
                     {
-                        throw "洛书运行时错误:  错误的中间码格式\n";
-                    }
-                    getline(_fin,sign2);
-                    if (sign2 == "</logic." + sign + ">")
-                    {
-                        break;
-                    }
-                } while (1);
-                logicture:;
+                        if (_fin.eof() == 1)
+                        {
+                            throw "洛书运行时错误:  错误的中间码格式\n";
+                        }
+                        getline(_fin,sign2);
+                        if (sign2 == "</logic." + sign + ">")
+                        {
+                            break;
+                        }
+                    } while (1);
+                ;
                 continue;
                 
             }
