@@ -69,7 +69,6 @@ wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/程序.losu
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/时间.losu
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/数学.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/数组.losu
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/随机数.losu
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/文件.losu
 wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/线程.losu
