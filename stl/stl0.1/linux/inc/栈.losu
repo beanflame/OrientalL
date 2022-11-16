@@ -1,0 +1,35 @@
+#类 栈
+    #方法 创建(大小)
+        <[此类],大小> = 大小
+        #指令
+            add [此类],创建,大小 lvm stack losuvm_stack_new mov [此类],编号
+        ;
+        #回收 大小
+    ;
+    #方法 压栈(内容)
+        #指令
+            add [此类],压栈,内容 add [此类],编号 lvm stack losuvm_stack_push
+        ;
+        #回收 内容
+    ;
+    #方法 弹栈
+        #指令
+            add [此类],编号 lvm stack losuvm_stack_pop
+        ;
+    ;
+    #方法 属性
+        #指令 
+            add [此类],编号 lvm stack losuvm_stack_top mov [此类],栈顶
+            add [此类],编号 lvm stack losuvm_stack_isempty mov [此类],是否为空
+            add [此类],编号 lvm stack losuvm_stack_size mov [此类],元素个数
+        ;
+    ;
+    #方法 销毁
+        #指令
+            add [此类],编号 lvm stack losuvm_stack_detach
+        ;
+        #回收 <[此类],编号>
+        #回收 <[此类],大小>
+    ;
+;
+

@@ -1,0 +1,70 @@
+#类 动态数组
+    #方法 创建
+        #指令
+            lvm darray losuvm_darray_new mov [此类],编号
+        ;
+    ;
+    #方法 写入(位置,内容)
+        #指令
+            add [此方法],内容 add [此方法],位置 add [此类],编号 lvm darray losuvm_darray_write
+        ;
+        #回收 位置
+        #回收 内容
+    ;
+    #方法 读取(位置)
+        #指令
+            add [此方法],位置 add [此类],编号 lvm darray losuvm_darray_read mov [此类],读取
+        ;
+        #回收 位置
+    ;
+    #方法 交换(位置1,位置2)
+        #指令
+            add [此方法],位置2 add [此方法],位置1 add [此类],编号 lvm darray losuvm_darray_swap
+        ;
+        #回收 位置1
+        #回收 位置2
+    ;
+    #方法 排序(模式)
+        //1从小到大,-1从大到小
+        #指令
+            add [此方法],模式 add [此类],编号 lvm darray losuvm_darray_sort
+        ;
+        #回收 模式
+    ;
+    #方法 排序状态()
+        //1从小到大,-1从大到小,0乱序
+        #指令
+            add [此类],编号 lvm darray losuvm_darray_sortsituation mov [此类],排序状态
+        ;
+    ;
+    #方法 查找(内容)
+        #指令
+            add [此方法],内容 add [此类],编号 lvm darray losuvm_darray_search mov [此类],查找
+        ;
+        #回收 内容
+    ;
+    #方法 插入(位置,内容)
+        #指令
+            add [此方法],内容 add [此方法],位置 add [此类],编号 lvm darray losuvm_darray_insert
+        ;
+        #回收 位置
+        #回收 内容
+    ;
+    #方法 删除(位置)
+        #指令
+            add [此方法],位置 add [此类],编号 lvm darray losuvm_darray_del
+        ;
+        #回收 位置
+    ;
+    #方法 清空
+        #指令
+            add [此类],编号 lvm darray losuvm_darray_clear
+        ;
+    ;
+    #方法 销毁
+        #指令
+            add [此类],编号 lvm darray losuvm_darray_clear
+        ;
+        #回收 <[此类],编号>
+    ;
+;
