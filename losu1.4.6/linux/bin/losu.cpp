@@ -1,6 +1,6 @@
 /*
-LPK 1.4.4
-Losu Program-language Kits 1.4.4
+LPK 1.4.6
+Losu Program-language Kits 1.4.6
 Powered by chen-chaochen
 https://gitee.com/chen-chaochen/lpk 
 */
@@ -85,7 +85,7 @@ int ls_asc(char a);
 string ls_endl();
 
 //Define Function
-string replace_all(string src,string old_value,string new_value) 
+inline string replace_all(string src,string old_value,string new_value) 
 {
     long i;
 	string rep;
@@ -111,7 +111,7 @@ string replace_all(string src,string old_value,string new_value)
 	return rep;
 }
 
-string command()
+inline string command()
 {
 	if (main_argc > 1)
 	{
@@ -120,19 +120,19 @@ string command()
 	return "";
 }
 
-string trmate(string a)
+inline string trmate(string a)
 {
     return a;
 }
-long double val(string a)
+inline long double val(string a)
 {
 	return atof(a.c_str());
 }
-int val_int(string a)
+inline int val_int(string a)
 {
 	return atoi(a.c_str());
 }
-string mid(string a,long start_pos,long len_pos)
+inline string mid(string a,long start_pos,long len_pos)
 {
     if (start_pos > a.length())
     {
@@ -140,21 +140,21 @@ string mid(string a,long start_pos,long len_pos)
     }
 	return a.substr(start_pos - 1,len_pos);
 }
-string str_sign_34()
+inline string str_sign_34()
 {
 	char a = char(34);
 	string b;
 	b = a;
 	return b;
 }
-string str_sign_92()
+inline string str_sign_92()
 {
 	char a = char(92);
 	string b;
     b = a;
 	return b;
 }
-string ls_endl()
+inline string ls_endl()
 {
     //不同系统CRLF不一样
     //linux & windows 用 LF即可
@@ -172,15 +172,15 @@ string ls_endl()
    */
     return b;
 }
-void ls_sleep(long ms)
+inline void ls_sleep(long ms)
 {
 	std::this_thread::sleep_for(std::chrono::milliseconds(ms));
 }
-int ls_asc(char a)
+inline int ls_asc(char a)
 {
     return (int)(a);
 }
-string ls_cr()
+inline string ls_cr()
 {
     //不同系统CRLF不一样
     //linux & windows 用 LF即可
@@ -198,7 +198,7 @@ string ls_cr()
    */
     return b;
 }
-string tostring(double a)
+inline string tostring(double a)
 {
     string _tmp = to_string(a);
     string _int_sub,_double_sub;
@@ -243,15 +243,15 @@ vector< vector<string> > array_mem;
 extern "C"{
 void cthread(string _thname);
 void create_new_th(string _th_name);
-void array_start();
+/*void array_start();
 void array_new(string a);
 void array_set(string a,long b,string c);
 string array_get(string a,long b);
-void array_clear(string a);
+void array_clear(string a);*/
 string getcsip();
 
 
-void array_start()
+/*void array_start()
 {
     arrayname.push_back("");
     array_mem.push_back( vector<string>() );
@@ -325,7 +325,7 @@ void array_clear(string a)
         }
     }
 }
-
+*/
 class ls_vm
 {
     public:
@@ -389,7 +389,7 @@ string ls_vm::api(string apiname)
 	{
 		return tostring((val_int(stack[2]) - (val_int(stack[2]) % val_int(top()))) / val_int(top()));
 	}
-    if (apiname == "array.newarry")
+    /*if (apiname == "array.newarry")
 	{
 		array_new(top());
 		return "";
@@ -408,6 +408,7 @@ string ls_vm::api(string apiname)
 		array_set(stack[3],val_int(stack[2]),top());
 		return "";
 	}
+    */
     return "";
 }
 void ls_vm::clear_st()
@@ -1019,10 +1020,10 @@ int main(int argc,const char** argv)
         vim.start();
         if (command() == "")
         {
-            throw "洛书编程语言 1.4.4\nLosu Program Kits Losu 1.4.4\n组件:   洛书解释器\n(C) 汤洛信息科技有限公司\n";
+            throw "洛书编程语言 1.4.6\nLosu Program Kits Losu 1.4.6\n组件:   洛书解释器\n(C) 汤洛信息科技有限公司\n";
         }
         mainfile = command();
-        array_start();
+        //array_start();
         vim.hostfile(mainfile,getcsip()); 
 		pthread_exit(NULL);
         //std::this_thread::yield();
@@ -1030,7 +1031,6 @@ int main(int argc,const char** argv)
     }
     catch(const char* _errinfo)
     {
-
     	cout<< _errinfo;
     }
     
