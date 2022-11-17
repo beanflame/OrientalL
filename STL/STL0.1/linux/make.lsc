@@ -1,0 +1,141 @@
+#!/usr/local/bin/losu
+<>
+csip STL安装
+<编译库>
+编译库,文件 
+ push
+"g++ -shared -fPIC -Ofast -std=c++11 -o /usr/local/lib/losu/lvm/"
+api =  add 编译库,文件 api &  push
+".lsd lib/"
+api &  add 编译库,文件 api &  push
+".cpp"
+api &  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+clear 编译库,文件 
+</编译库>
+<编译类>
+编译类,文件 
+ push
+"losuc inc/"
+api =  add 编译类,文件 api &  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+clear 编译类,文件 
+</编译类>
+<安装类>
+安装类, 
+ push
+"mkdir /usr/local/lib/losu/inc/模板库"
+api =  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+ push
+"cp inc/*.lsc /usr/local/lib/losu/inc/模板库/&&rm inc/*.lsc"
+api =  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+</安装类>
+<STL安装>
+STL安装, 
+ push
+"losuvm_array"
+api =  mov 编译库,文件  
+ push
+"g++ -shared -fPIC -Ofast -std=c++11 -o /usr/local/lib/losu/lvm/"
+api =  add 编译库,文件 api &  push
+".lsd lib/"
+api &  add 编译库,文件 api &  push
+".cpp"
+api &  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+clear 编译库,文件 
+ push
+"losuvm_darray"
+api =  mov 编译库,文件  
+ push
+"g++ -shared -fPIC -Ofast -std=c++11 -o /usr/local/lib/losu/lvm/"
+api =  add 编译库,文件 api &  push
+".lsd lib/"
+api &  add 编译库,文件 api &  push
+".cpp"
+api &  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+clear 编译库,文件 
+ push
+"losuvm_stack"
+api =  mov 编译库,文件  
+ push
+"g++ -shared -fPIC -Ofast -std=c++11 -o /usr/local/lib/losu/lvm/"
+api =  add 编译库,文件 api &  push
+".lsd lib/"
+api &  add 编译库,文件 api &  push
+".cpp"
+api &  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+clear 编译库,文件 
+ push
+"losuvm_queue"
+api =  mov 编译库,文件  
+ push
+"g++ -shared -fPIC -Ofast -std=c++11 -o /usr/local/lib/losu/lvm/"
+api =  add 编译库,文件 api &  push
+".lsd lib/"
+api &  add 编译库,文件 api &  push
+".cpp"
+api &  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+clear 编译库,文件 
+ push
+"数组"
+api =  mov 编译类,文件  
+ push
+"losuc inc/"
+api =  add 编译类,文件 api &  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+clear 编译类,文件 
+ push
+"动态数组"
+api =  mov 编译类,文件  
+ push
+"losuc inc/"
+api =  add 编译类,文件 api &  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+clear 编译类,文件 
+ push
+"栈"
+api =  mov 编译类,文件  
+ push
+"losuc inc/"
+api =  add 编译类,文件 api &  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+clear 编译类,文件 
+ push
+"队列"
+api =  mov 编译类,文件  
+ push
+"losuc inc/"
+api =  add 编译类,文件 api &  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+clear 编译类,文件 
+ mov 安装类,  
+ push
+"mkdir /usr/local/lib/losu/inc/模板库"
+api =  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+ push
+"cp inc/*.lsc /usr/local/lib/losu/inc/模板库/&&rm inc/*.lsc"
+api =  mov 程序,运行,字符  
+add 程序,运行,字符 sys 
+clear 程序,运行,字符 
+</STL安装>
+</>

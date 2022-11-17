@@ -1,0 +1,26 @@
+#加载 STL安装
+#导入 洛书/程序
+#方法 编译库(文件)
+    程序,运行("g++ -shared -fPIC -Ofast -std=c++11 -o /usr/local/lib/losu/lvm/"&文件&".lsd lib/"&文件&".cpp")
+    #回收 文件
+;
+#方法 编译类(文件)
+    程序,运行("losuc inc/"&文件)
+    #回收 文件
+;
+#方法 安装类
+    程序,运行("mkdir /usr/local/lib/losu/inc/模板库")
+    程序,运行("cp inc/*.lsc /usr/local/lib/losu/inc/模板库/&&rm inc/*.lsc")
+;
+#方法 STL安装
+    编译("losuvm_array")库
+    编译("losuvm_darray")库
+    编译("losuvm_stack")库
+    编译("losuvm_queue")库
+    编译("数组")类
+    编译("动态数组")类
+    编译("栈")类
+    编译("队列")类
+    安装类
+;
+    

@@ -1,0 +1,38 @@
+#类 队列
+    #方法 创建(长度)
+        #指令
+            add [此方法],长度 lvm queue losuvm_queue_new mov [此类],编号
+        ;
+    ;
+    #方法 入队(元素)
+        #指令
+            add [此方法],元素 add [此类],编号 lvm queue losuvm_queue_in
+        ;
+    ;
+    #方法 出队
+        #指令
+            add [此类],编号 lvm queue losuvm_queue_out
+        ;
+    ;
+    #方法 属性
+        #指令
+            add [此类],编号 lvm queue losuvm_queue_size mov [此类],元素个数
+            add [此类],编号 lvm queue losuvm_queue_first mov [此类],队头
+            add [此类],编号 lvm queue losuvm_queue_last mov [此类],队尾
+        ;
+    ;
+    #方法 清空
+        #指令
+            add [此类],编号 lvm queue losuvm_queue_clear
+        ;
+    ;
+    #方法 销毁
+        #指令
+            add [此类],编号 lvm queue losuvm_queue_detach
+        ;
+        #回收 <[此类],编号>
+        #回收 <[此类],队头>
+        #回收 <[此类],队尾>
+        #回收 <[此类],元素个数>
+    ;
+;
