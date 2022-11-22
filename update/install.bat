@@ -1,5 +1,5 @@
 @echo off 
-echo 洛书编程语言 1.4.6 
+echo 洛书编程语言 1.4.8 
 echo ********************************
 echo *       Losu Program Kits      *
 echo *         Instaling...         *    
@@ -15,12 +15,12 @@ mkdir C:\losu\inc
 mkdir C:\losu\inc\洛书
 
 ::安装可执行文件
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/bin/losuc.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/bin/losu.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/bin/losuh.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/bin/lpk.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/bin/losudb.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/bin/lpk_compiler.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/bin/losuc.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/bin/losu.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/bin/losuh.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/bin/lpk.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/bin/losudb.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/bin/lpk_compiler.cpp
 g++ -std=c++11 -Ofast -static -o losu.exe losu.cpp -ldl -lpthread
 g++ -std=c++11 -Ofast -static -o lpk.exe lpk.cpp -ldl -lpthread
 g++ -std=c++11 -Ofast -static -o lpk_compiler.exe lpk_compiler.cpp
@@ -37,17 +37,16 @@ copy .\losudb.exe C:\losu\bin\losudb.exe
 del .\*.exe
 del .\*.cpp
 ::安装标准插件
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_io.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_file.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_mark.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_math.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_md5.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_rand.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_string.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_time.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_gpio.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_webui.cpp
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/lib/losuvm_array.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/lib/losuvm_io.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/lib/losuvm_file.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/lib/losuvm_mark.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/lib/losuvm_math.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/lib/losuvm_md5.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/lib/losuvm_rand.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/lib/losuvm_string.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/lib/losuvm_time.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/lib/losuvm_gpio.cpp
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/lib/losuvm_webui.cpp
 g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_io.lsd losuvm_io.cpp
 g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_file.lsd losuvm_file.cpp
 g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_mark.lsd losuvm_mark.cpp
@@ -58,25 +57,24 @@ g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_string.lsd losuvm_string.cpp
 g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_time.lsd losuvm_time.cpp
 g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_gpio.lsd losuvm_gpio.cpp
 g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_webui.lsd losuvm_webui.cpp
-g++ -std=c++11 -Ofast -shared -fPIC -o losuvm_array.lsd losuvm_array.cpp
 copy .\*.lsd C:\losu\lvm\
 del .\*.lsd
 del .\*.cpp
 ::安装基本类
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/加密器.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/MD转换器.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/标准流.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/程序.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/时间.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/数学.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/随机数.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/文件.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/线程.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/字符串.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/错误处理.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/引脚.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/通用引脚.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/windows/inc/网页.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/加密器.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/MD转换器.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/标准流.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/程序.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/时间.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/数学.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/随机数.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/文件.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/线程.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/字符串.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/错误处理.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/引脚.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/通用引脚.losu
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/windows/inc/网页.losu
 C:\losu\bin\losuc.exe 加密器
 C:\losu\bin\losuc.exe MD转换器
 C:\losu\bin\losuc.exe 标准流
@@ -95,7 +93,7 @@ C:\losu\bin\losuc.exe 网页
 copy .\*.lsc C:\losu\inc\洛书\
 del .\*.lsc
 del .\*.losu
-wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.6/sources.tar
+wget --no-check-certificate https://gitee.com/chen-chaochen/lpk/raw/release/losu1.4.8/sources.tar
 ::结束安装
 C:\losu\bin\losu.exe
 C:\losu\bin\losuc.exe
