@@ -43,7 +43,7 @@ string LS_ROOT = "/usr/local/lib/losu/";
 string LS_LIB_PATH = "/usr/local/lib/losu/lib/";
 string LS_LSI_PATH = "/usr/local/lib/losu/lsi/";
 string LS_VM_PATH  = "/usr/local/lib/losu/lvm/";
-/
+//
 
 //至此，全部配置已完成，可以编译
 
