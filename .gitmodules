@@ -2,3 +2,7 @@
 	url  = https://gitee.com/neuq-losu/owls
 	path = Owls前端建站工具
 
+[submodule "微洛书单片机脚本"]
+	url  = https://gitee.com/neuq-losu/microlosu
+	path = 微洛书单片机脚本
+
