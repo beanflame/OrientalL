@@ -1,7 +1,7 @@
 <div align="center">
 	<h1>
 	<a href="https://gitee.com/electrons/OrientalL/">
-	<img src="https://gitee.com/electrons/OrientalL/raw/master/Demo/%E4%B8%9C%E6%96%B93d.png" height="128" >
+	<img src="https://gitee.com/electrons/OrientalL/raw/master/Demo/%E4%B8%9C%E6%96%B93d.png" height="256" >
 	</a>
 	</h1>
 	<h4>东方编程语言</h4>
